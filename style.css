@@ -1,0 +1,244 @@
+* {
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  background: radial-gradient(circle at top, #141823, #0b0e14);
+  color: #e8eaf0;
+}
+
+/* ================= PANELS ================= */
+.left,
+.right {
+  width: 260px;
+  padding: 18px;
+  /* background-color: rgb(1, 7, 28); */
+  background: linear-gradient(180deg, #171c28, #121622);
+  border-right: 1px solid #24293a;
+}
+
+.right {
+  border-right: none;
+  border-left: 1px solid #24293a;
+}
+
+/* Headings */
+.left h3,
+.right h3 {
+  font-size: 20px;
+  font-weight: 800;
+  font-family: monospace;
+  color: #cfd6ff;
+  letter-spacing: 1.2px;
+  margin: 18px 0 12px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* ================= BUTTONS ================= */
+button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #2c3350, #1f2440);
+  color: #ffffff;
+  border: 1px solid #343c66;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  
+}
+
+button:hover {
+  background: linear-gradient(135deg, #3a4490, #2b3380);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Delete button */
+#deleteBtn {
+  background: linear-gradient(135deg, #7a1e1e, #531313);
+  border: 1px solid #8f2b2b;
+}
+
+#deleteBtn:hover {
+  background: linear-gradient(135deg, #b02d2d, #7a1e1e);
+}
+
+/* ================= INPUTS ================= */
+label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #b5bce8;
+  margin-bottom: 4px;
+  display: block;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 9px 10px;
+  border-radius: 10px;
+  border: 1px solid #2f3555;
+  background: #0e1220;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #5b6cff;
+  box-shadow: 0 0 0 1px #5b6cff66;
+}
+
+/* ================= LAYERS LIST ================= */
+#layers {
+  padding: 0;
+  margin: 0;
+}
+
+#layers li {
+  list-style: none;
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  background: linear-gradient(135deg, #1f2436, #191e30);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #e0e4ff;
+  transition: all 0.2s ease;
+}
+
+#layers li:hover {
+  background: linear-gradient(135deg, #2c3380, #232a66);
+}
+
+/* ================= CANVAS ================= */
+#canvas {
+  flex: 1;
+  position: relative;
+  /* background: radial-gradient(circle at top, #20263a, #14192b); */
+  background: radial-gradient(circle at top, #000000, #151c34);
+
+  /* background-color: rgba(27, 26, 26, 0.835); */
+  margin: 14px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #2a2f4a;
+}
+
+/* ================= ELEMENT ================= */
+.element {
+  position: absolute;
+  background: #d9dbea;
+  cursor: move;
+  pointer-events: auto;
+  /* border-radius: 6px; */
+  overflow: visible;
+}
+
+
+/* ================= TEXT ELEMENT ================= */
+.text {
+  background: transparent;
+  color: #ffffff;
+  font-weight: 500;
+  user-select: none;     
+  cursor: move;
+}
+
+/*  INNER TEXT CONTENT */
+.text-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;   
+  user-select: none;    
+}
+
+
+
+/* ================= SELECTION ================= */
+.selected {
+  outline: 2px solid #5b6cff;
+  outline-offset: 2px;
+}
+
+/* ================= HANDLES ================= */
+
+/* Hide handles by default */
+.handle,
+.rotate-handle {
+  display: none;
+}
+
+/* Show only when selected */
+.selected .handle,
+.selected .rotate-handle {
+  display: block;
+}
+
+/* Resize handles */
+.handle {
+  width: 9px;
+  height: 9px;
+  background: #5b6cff;
+  border-radius: 3px;
+  position: absolute;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+.tl { top: -5px; left: -5px; cursor: nw-resize; }
+.tr { top: -5px; right: -5px; cursor: ne-resize; }
+.bl { bottom: -5px; left: -5px; cursor: sw-resize; }
+.br { bottom: -5px; right: -5px; cursor: se-resize; }
+
+/* Rotation handle */
+.rotate-handle {
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(135deg, #ffb347, #ff8800);
+  border-radius: 50%;
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: grab;
+  z-index: 25;
+  pointer-events: auto;
+  box-shadow: 0 0 10px #ff880088;
+}
+
+#statusBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 32px;
+  background: #0e1220;
+  border-top: 1px solid #2f3555;
+  color: #cfd6ff;
+  font-size: 15px;
+  padding: 6px 12px;
+  font-family: monospace;
+  z-index: 999;
+}
+.element.locked {
+  outline: 2px dashed #ff9800;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+

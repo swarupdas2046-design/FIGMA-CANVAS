@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Figma Editor</title>
+    <link
+      rel="shortcut icon"
+      href="https://img.freepik.com/premium-vector/das-letter-logo-design-technology-company-das-logo-design-black-white-color-combination-das-logo-das-vector-das-design-das-icon-das-alphabet-das-typography-logo-design_229120-149399.jpg"
+      type="image/x-icon"
+    />  
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- LEFT PANEL Section-->
+    <div class="left">
+      <h3>Tools</h3>
+      <button id="addRect">
+        Add Rectangle <i id="con" class="ri-rectangle-line"></i>
+      </button>
+      <button id="addText">Add Text <i id="con" class="ri-text"></i></button>
+
+      <h3>Layers</h3>
+      <ul id="layers"></ul>
+      <button id="layerUp">
+        Move Up <i id="con" class="ri-arrow-drop-up-fill"></i>
+      </button>
+      <button id="layerDown">
+        Move Down <i id="con" class="ri-arrow-drop-down-fill"></i>
+      </button>
+    </div>
+
+    <!-- CANVAS area  -->
+    <div id="canvas"></div>
+
+    <!-- RIGHT PANEL section  -->
+    <div class="right">
+      <h3>Properties</h3>
+
+      <label>Width</label>
+      <input type="number" id="pWidth" />
+
+      <label>Height</label>
+      <input type="number" id="pHeight" />
+
+      <label>Background <i id="con" class="ri-color-filter-fill"></i></label>
+      <input type="color" id="pColor" />
+
+      <label>Text <i id="con" class="ri-pencil-ai-2-line"></i> </label>
+
+      <input type="text" id="pText" />
+
+      <label>Text Color <i id="con" class="ri-font-color"></i></label>
+      <input type="color" id="pTextColor" />
+
+      <label>Rotation <i id="con" class="ri-refresh-line"></i></label>
+      <input type="number" id="pRotate" />
+
+      <!-- lock button for element ko lock karne ke liye   -->
+      <button id="lockBtn">🔒 Lock</button>
+
+      <!-- element delete karne ke liye  -->
+      <button id="deleteBtn">Delete</button>
+
+      <h3>Export</h3>
+      <button id="exportJSON">
+        Export JSON <i id="con" class="ri-file-copy-line"></i>
+      </button>
+      <button id="exportHTML">
+        Export HTML <i id="con" class="ri-file-copy-line"></i>
+      </button>
+    </div>
+    <!-- element overall status  -->
+    <div id="statusBar">No element selected</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
