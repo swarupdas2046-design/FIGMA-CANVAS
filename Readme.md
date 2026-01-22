@@ -7,6 +7,10 @@ focusing on **DOM manipulation, mouse events, state management, and editor-style
 
 ---
 
+## 🔗 Live Demo   👉 [Click here to view live project](https://figma-canvas.vercel.app/)
+
+
+
 ## 🚀 Core Features
 
 - Add **Rectangle** elements
