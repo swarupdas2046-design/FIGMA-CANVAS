@@ -1,9 +1,9 @@
-# 🧩 DOM Figma-Like Editor (Vanilla JavaScript)
+# 🧩 DOM Figma Like Editor (Vanilla JavaScript)
 
 A mini **Figma-inspired design editor** built using **HTML, CSS, and Vanilla JavaScript**.  
 The goal of this project is to understand how real design editors work internally by
 focusing on **DOM manipulation, mouse events, state management, and editor-style UX**
-— without using any external frameworks or libraries.
+  without using any external frameworks or libraries.
 
 ---
 
@@ -31,7 +31,7 @@ focusing on **DOM manipulation, mouse events, state management, and editor-style
 
 ## ⭐ Additional Features
 
-### 1️⃣ Duplicate Element — `Ctrl + D`
+### 1️⃣ Duplicate Element  `Ctrl + D`
 
 **What it does**
 - Creates an exact copy of the currently selected element
@@ -46,7 +46,7 @@ focusing on **DOM manipulation, mouse events, state management, and editor-style
 
 ---
 
-### 2️⃣ Undo — `Ctrl + Z`
+### 2️⃣ Undo  `Ctrl + Z`
 
 **What it does**
 - Reverts the editor to the previous state
@@ -61,7 +61,7 @@ focusing on **DOM manipulation, mouse events, state management, and editor-style
 
 ---
 
-### 3️⃣ Redo — `Ctrl + Y`
+### 3️⃣ Redo  `Ctrl + Y`
 
 **What it does**
 - Restores the previously undone state
@@ -80,7 +80,7 @@ Selected: TEXT | X:120 Y:80 | W:200 H:60 | R:15°
 
 
 **What it does**
-- Displays real-time information about the selected element
+- Displays real time information about the selected element
 
 **Approach & Logic**
 - A fixed bottom status bar updates on:
